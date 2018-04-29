@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+kafka:
+  seed:
+    producer:
+      bootstrap: localhost:9092
+      topic: seed
+
+fixedDelay.in.milliseconds: 1000
