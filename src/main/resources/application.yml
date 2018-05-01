@@ -5,6 +5,6 @@ kafka:
   seed:
     producer:
       bootstrap: localhost:9092
-      topic: seed
+      topic: seed1
 
 fixedDelay.in.milliseconds: 1000

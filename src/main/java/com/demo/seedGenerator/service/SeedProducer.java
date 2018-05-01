@@ -9,11 +9,12 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
+import java.util.UUID;
 
 @Component
 public class SeedProducer {
     private static final Logger log = LoggerFactory.getLogger(SeedProducer.class);
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Integer> kafkaTemplate;
     private KafkaSeedProducerProperties properties;
 
     @Autowired
@@ -26,7 +27,7 @@ public class SeedProducer {
     public void seed() {
         Random rand = new Random();
         int randomSeed = rand.nextInt(98) + 1;
-        kafkaTemplate.send(properties.getTopic(), String.valueOf(randomSeed));
+        kafkaTemplate.send(properties.getTopic(), UUID.randomUUID().toString(), randomSeed);
         log.info("seeded with {}", randomSeed);
     }
 }
