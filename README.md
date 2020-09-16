@@ -2,7 +2,7 @@
 
 This is an experiment in learning kafka 1.0.0
 
-This app is a producer that posts random numbers to a the `seed` topic on a configurable interval.
+This app is a producer that posts random numbers to the `seed` topic on a configurable interval.
 Along with the random number, it posts a random UUID as the key which is propagated down all the way by
 every app.
 
