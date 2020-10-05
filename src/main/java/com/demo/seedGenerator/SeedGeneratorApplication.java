@@ -10,5 +10,3 @@ public class SeedGeneratorApplication {
 		SpringApplication.run(SeedGeneratorApplication.class, args);
 	}
 }
-
-
